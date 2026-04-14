@@ -1,3 +1,15 @@
-# Godot 4+ specific ignores
+# Godot
 .godot/
-/android/
+.import/
+.export/
+export.cfg
+export_presets.cfg
+*.tmp
+
+# Claude Code
+.claude/
+
+# Build outputs
+*.apk
+*.apk.idsig
+*.aab

@@ -11,7 +11,7 @@ const UPGRADE_COSTS: Dictionary = {
 	"armor":   [150, 350, 700],
 }
 const SHIP_DEFS: Array = [
-	{"id": "default",    "name": "Balıkçı Teknesi", "price": 0,    "gem_price": 0,   "icon": "⛵"},
+	{"id": "default",    "name": "Petrol Tankeri",   "price": 0,    "gem_price": 0,   "icon": "⛵"},
 	{"id": "patrol",     "name": "Devriye Botu",     "price": 300,  "gem_price": 10,  "icon": "🚤"},
 	{"id": "rescue",     "name": "Kurtarma Gemisi",  "price": 600,  "gem_price": 20,  "icon": "🔴"},
 	{"id": "destroyer",  "name": "Muhrip",            "price": 1000, "gem_price": 35,  "icon": "⚔"},

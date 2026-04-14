@@ -1,0 +1,83 @@
+# Oil Must Flow
+
+Düşman kuvvetleri boğazı kapattı. Petrolün geçişine izin verilmiyor. Mayınlar döşendi, dronlar devriye geziyor ve füzeler peşinde. Elinde sadece gemin ve kaptanlık becerin var. Destek gelecek mi, yoksa tek başına mı başaracaksın?
+
+---
+
+## Teknik Bilgiler
+- Oyun Motoru: Godot 4  
+- Platform: Android / Web  
+- Durum: Geliştiriliyor  
+- Lisans: MIT  
+
+---
+
+## Oyun Hakkında
+
+Bir ticaret gemisinin kaptanısın. Görevin basit: Boğazı geç ve hayatta kal.
+
+Ancak bu o kadar kolay değil. Karşında sürüklenen mayınlar, devriye gezen dronlar ve giderek artan zorluk seviyesi var. Reflekslerine güvenmek zorundasın.
+
+Ne kadar ileri gidebilirsin?
+
+---
+
+## Özellikler
+
+- Sonsuz kaydırmalı aksiyon (her oyunda farklı engel dizilimi)  
+- Üç farklı düşman tipi: mayın, drone ve güdümlü füze  
+- Zamanla artan zorluk (hız ve engel yoğunluğu artar)  
+- 3 can sistemi (hasar aldıkça görsel ve ses geri bildirimi)  
+- Mobil dokunmatik ve masaüstü klavye desteği  
+- En yüksek skor kaydı (local)  
+
+---
+
+## Kontroller
+
+**Klavye:**
+- ← → veya A / D → Gemiyi sola/sağa hareket ettir  
+
+**Mobil:**
+- Ekranın sol veya sağ tarafına dokunarak yön ver  
+- Sürükleyerek daha hassas kontrol sağlayabilirsin  
+
+---
+
+## Nasıl Çalıştırılır
+
+### Godot ile çalıştırmak için:
+1. Repoyu klonla  
+2. Godot 4 aç → **Import** seç  
+3. Proje klasörünü seç  
+4. F5 tuşuna basarak çalıştır  
+
+### Web versiyonu:
+- Godot → Project → Export → Web (HTML5)
+
+---
+
+## Proje Yapısı
+
+res://
+├── scenes/
+│ ├── game.tscn # Ana oyun sahnesi
+│ ├── ship.tscn # Gemi
+│ ├── mine.tscn # Mayın
+│ ├── drone.tscn # Drone
+│ └── ui.tscn # Arayüz (HUD)
+│
+├── scripts/
+│ ├── ship.gd
+│ ├── obstacle.gd
+│ └── game_manager.gd
+│
+└── assets/
+├── sprites/
+└── sounds/
+
+---
+
+## 💭 Not
+
+Bu proje öğrenme sürecimde geliştirdiğim bir mobil oyun denemesidir. Oyun mekanikleri ve sahne yönetimi üzerine kendimi geliştirmek amacıyla yapılmıştır.

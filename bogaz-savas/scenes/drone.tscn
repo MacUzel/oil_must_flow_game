@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cwdtgtm6tvogx"]
+
+[ext_resource type="Texture2D" uid="uid://c77si6qxu3gb2" path="res://assets/sprites/169221-OVWEZA-796.png" id="2_knnud"]
+[ext_resource type="Script" uid="uid://1f0grq03tcng" path="res://scripts/drone.gd" id="3_1r4ts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knnud"]
+
+[node name="Drone" type="Node2D" unique_id=1025317178]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2655271]
+collision_layer = 2
+script = ExtResource("3_1r4ts")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=270656563]
+visible = false
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_knnud")
+
+[node name="Frame" type="Polygon2D" parent="Area2D" unique_id=200000010]
+color = Color(0.15, 0.18, 0.15, 1)
+polygon = PackedVector2Array(-4, -22, 4, -22, 4, -4, 22, -4, 22, 4, 4, 4, 4, 22, -4, 22, -4, 4, -22, 4, -22, -4, -4, -4)
+
+[node name="RotorN" type="Polygon2D" parent="Area2D" unique_id=200000011]
+position = Vector2(0, -22)
+color = Color(0.12, 0.38, 0.33, 1)
+polygon = PackedVector2Array(8.0, 0.0, 5.66, 5.66, 0.0, 8.0, -5.66, 5.66, -8.0, 0.0, -5.66, -5.66, 0.0, -8.0, 5.66, -5.66)
+
+[node name="RotorNBlade" type="Polygon2D" parent="Area2D" unique_id=200000012]
+position = Vector2(0, -22)
+color = Color(0.20, 0.55, 0.48, 1)
+polygon = PackedVector2Array(6.0, 0.0, 2.0, 2.0, 0.0, 6.0, -2.0, 2.0, -6.0, 0.0, -2.0, -2.0, 0.0, -6.0, 2.0, -2.0)
+
+[node name="RotorS" type="Polygon2D" parent="Area2D" unique_id=200000013]
+position = Vector2(0, 22)
+color = Color(0.12, 0.38, 0.33, 1)
+polygon = PackedVector2Array(8.0, 0.0, 5.66, 5.66, 0.0, 8.0, -5.66, 5.66, -8.0, 0.0, -5.66, -5.66, 0.0, -8.0, 5.66, -5.66)
+
+[node name="RotorSBlade" type="Polygon2D" parent="Area2D" unique_id=200000014]
+position = Vector2(0, 22)
+color = Color(0.20, 0.55, 0.48, 1)
+polygon = PackedVector2Array(6.0, 0.0, 2.0, 2.0, 0.0, 6.0, -2.0, 2.0, -6.0, 0.0, -2.0, -2.0, 0.0, -6.0, 2.0, -2.0)
+
+[node name="RotorE" type="Polygon2D" parent="Area2D" unique_id=200000015]
+position = Vector2(22, 0)
+color = Color(0.12, 0.38, 0.33, 1)
+polygon = PackedVector2Array(8.0, 0.0, 5.66, 5.66, 0.0, 8.0, -5.66, 5.66, -8.0, 0.0, -5.66, -5.66, 0.0, -8.0, 5.66, -5.66)
+
+[node name="RotorEBlade" type="Polygon2D" parent="Area2D" unique_id=200000016]
+position = Vector2(22, 0)
+color = Color(0.20, 0.55, 0.48, 1)
+polygon = PackedVector2Array(6.0, 0.0, 2.0, 2.0, 0.0, 6.0, -2.0, 2.0, -6.0, 0.0, -2.0, -2.0, 0.0, -6.0, 2.0, -2.0)
+
+[node name="RotorW" type="Polygon2D" parent="Area2D" unique_id=200000017]
+position = Vector2(-22, 0)
+color = Color(0.12, 0.38, 0.33, 1)
+polygon = PackedVector2Array(8.0, 0.0, 5.66, 5.66, 0.0, 8.0, -5.66, 5.66, -8.0, 0.0, -5.66, -5.66, 0.0, -8.0, 5.66, -5.66)
+
+[node name="RotorWBlade" type="Polygon2D" parent="Area2D" unique_id=200000018]
+position = Vector2(-22, 0)
+color = Color(0.20, 0.55, 0.48, 1)
+polygon = PackedVector2Array(6.0, 0.0, 2.0, 2.0, 0.0, 6.0, -2.0, 2.0, -6.0, 0.0, -2.0, -2.0, 0.0, -6.0, 2.0, -2.0)
+
+[node name="CameraLens" type="Polygon2D" parent="Area2D" unique_id=200000019]
+color = Color(0.55, 0.55, 0.60, 1)
+polygon = PackedVector2Array(0, -5, 4, 0, 0, 5, -4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1007454313]
+shape = SubResource("RectangleShape2D_knnud")

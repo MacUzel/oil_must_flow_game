@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://c0menuscene01"]
+
+[ext_resource type="Script" uid="uid://cq8uopibxwdof" path="res://scripts/menu.gd" id="1_menugd"]
+
+[node name="Menu" type="Node2D" unique_id=1725646436]
+script = ExtResource("1_menugd")
+
+[node name="FullBG" type="ColorRect" parent="." unique_id=299999]
+offset_top = -2000.0
+offset_right = 540.0
+offset_bottom = 3000.0
+color = Color(0.039215688, 0.08627451, 0.15686275, 1)
+
+[node name="BG1" type="ColorRect" parent="." unique_id=200001]
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0.039215688, 0.08627451, 0.15686275, 1)
+
+[node name="BG2" type="ColorRect" parent="." unique_id=200002]
+offset_top = -960.0
+offset_right = 540.0
+color = Color(0.039215688, 0.08627451, 0.15686275, 1)
+
+[node name="LeftWall" type="Polygon2D" parent="." unique_id=200003]
+color = Color(0.26, 0.22, 0.16, 1)
+polygon = PackedVector2Array(0, -200, 54, -200, 54, 0, 62, 120, 48, 240, 68, 360, 52, 480, 70, 600, 55, 720, 65, 840, 50, 960, 50, 1200, 0, 1200)
+
+[node name="RightWall" type="Polygon2D" parent="." unique_id=200004]
+color = Color(0.26, 0.22, 0.16, 1)
+polygon = PackedVector2Array(540, -200, 486, -200, 486, 0, 476, 120, 494, 240, 472, 360, 490, 480, 468, 600, 485, 720, 474, 840, 490, 960, 490, 1200, 540, 1200)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=200020]
+volume_db = -8.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=200005]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=200006]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Control" unique_id=200007]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 480.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(0.3, 0.85, 0.55, 1)
+theme_override_font_sizes/font_size = 62
+text = "OIL MUST
+FLOW"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CanvasLayer/Control" unique_id=200008]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 266.0
+offset_right = 480.0
+offset_bottom = 306.0
+theme_override_colors/font_color = Color(0.55, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 18
+text = "Boğazı geç, hayatta kal!"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="CanvasLayer/Control" unique_id=200009]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 308.0
+offset_right = 480.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0.85, 0.75, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+text = "En Yüksek: 0m"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control" unique_id=200010]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 535.0
+offset_right = 395.0
+offset_bottom = 615.0
+text = "▶  OYNA"
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/Control" unique_id=200011]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 635.0
+offset_right = 370.0
+offset_bottom = 705.0
+text = "⚙  AYARLAR"
+
+[node name="SettingsPanel" type="PanelContainer" parent="CanvasLayer/Control" unique_id=200012]
+visible = false
+layout_mode = 0
+offset_left = 70.0
+offset_top = 215.0
+offset_right = 470.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/SettingsPanel" unique_id=200013]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="PaddingTop" type="Control" parent="CanvasLayer/Control/SettingsPanel/VBoxContainer" unique_id=200014]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="SettingsTitleLabel" type="Label" parent="CanvasLayer/Control/SettingsPanel/VBoxContainer" unique_id=200015]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.85, 0.55, 1)
+theme_override_font_sizes/font_size = 28
+text = "⚙  AYARLAR"
+horizontal_alignment = 1
+
+[node name="SoundButton" type="Button" parent="CanvasLayer/Control/SettingsPanel/VBoxContainer" unique_id=200016]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "Ses:  ✓  Açık"
+
+[node name="VibrationButton" type="Button" parent="CanvasLayer/Control/SettingsPanel/VBoxContainer" unique_id=200017]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "Titreşim:  ✓  Açık"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/SettingsPanel/VBoxContainer" unique_id=200018]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Control/SettingsPanel/VBoxContainer" unique_id=200019]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+text = "✕  KAPAT"
+
+[connection signal="pressed" from="CanvasLayer/Control/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SettingsPanel/VBoxContainer/SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SettingsPanel/VBoxContainer/VibrationButton" to="." method="_on_vibration_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SettingsPanel/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cc8s3thsak2qf"]
+
+[ext_resource type="Script" uid="uid://bljjmokih2owc" path="res://scripts/obstacle.gd" id="1_kqr42"]
+[ext_resource type="Texture2D" uid="uid://02ni7epy5jbi" path="res://assets/sprites/ufoYellow.png" id="2_yym1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqr42"]
+size = Vector2(38, 38)
+
+[node name="Mine" type="Node2D" unique_id=1662766252]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1596452038]
+collision_layer = 2
+script = ExtResource("1_kqr42")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=218328030]
+visible = false
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("2_yym1a")
+
+[node name="MineBody" type="Polygon2D" parent="Area2D" unique_id=200000001]
+color = Color(0.28, 0.25, 0.22, 1)
+polygon = PackedVector2Array(22.0, 0.0, 10.4, 6.0, 11.0, 19.1, 0.0, 12.0, -11.0, 19.1, -10.4, 6.0, -22.0, 0.0, -10.4, -6.0, -11.0, -19.1, 0.0, -12.0, 11.0, -19.1, 10.4, -6.0)
+
+[node name="MineRing" type="Polygon2D" parent="Area2D" unique_id=200000002]
+color = Color(0.42, 0.35, 0.18, 1)
+polygon = PackedVector2Array(13.0, 0.0, 9.19, 9.19, 0.0, 13.0, -9.19, 9.19, -13.0, 0.0, -9.19, -9.19, 0.0, -13.0, 9.19, -9.19)
+
+[node name="Detonator" type="Polygon2D" parent="Area2D" unique_id=200000003]
+color = Color(0.85, 0.12, 0.08, 1)
+polygon = PackedVector2Array(5.0, 0.0, 2.5, 4.33, -2.5, 4.33, -5.0, 0.0, -2.5, -4.33, 2.5, -4.33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1879293758]
+shape = SubResource("RectangleShape2D_kqr42")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

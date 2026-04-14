@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b5krvmv87c3ry"]
+
+[ext_resource type="PackedScene" uid="uid://b0v5dkhssvlhr" path="res://scenes/ship.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://basedu0d2115a" path="res://scripts/game_manager.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cc8s3thsak2qf" path="res://scenes/mine.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://2kmpsihvm7qa" path="res://scenes/game_over.tscn" id="2_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cwdtgtm6tvogx" path="res://scenes/drone.tscn" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://vpvh0rlp5arh" path="res://scenes/missiles.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bw1w25pnya56m" path="res://scenes/ui.tscn" id="6_p57ef"]
+
+[node name="Game_tscn" type="Node2D" unique_id=1506857123]
+script = ExtResource("1_yqjtg")
+game_over_scene = ExtResource("2_u5sy4")
+mine_scene = ExtResource("2_iywne")
+drone_scene = ExtResource("3_p57ef")
+missile_scene = ExtResource("4_u5sy4")
+
+[node name="BG1" type="ColorRect" parent="." unique_id=1352885687]
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0.039215688, 0.08627451, 0.15686275, 1)
+
+[node name="BG2" type="ColorRect" parent="." unique_id=439719546]
+offset_top = -960.0
+offset_right = 540.0
+color = Color(0.039215688, 0.08627451, 0.15686275, 1)
+
+[node name="CharacterBody2D2" parent="." unique_id=1034839923 instance=ExtResource("1_uwrxv")]
+
+[node name="Ui" parent="." unique_id=1858969540 instance=ExtResource("6_p57ef")]
+
+[node name="LeftWall" type="ColorRect" parent="." unique_id=1285442737]
+offset_right = 60.0
+offset_bottom = 960.0
+color = Color(0.101960786, 0.16470589, 0.101960786, 1)
+
+[node name="RightWall" type="ColorRect" parent="." unique_id=854725856]
+offset_left = 480.0
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0.101960786, 0.16470589, 0.101960786, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1066090651]
+position = Vector2(270, 480)

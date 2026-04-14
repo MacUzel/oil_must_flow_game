@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://bw1w25pnya56m"]
+
+[ext_resource type="Script" uid="uid://cpeevwvywm3jl" path="res://scripts/ui.gd" id="1_nt7q6"]
+[ext_resource type="Script" path="res://scripts/virtual_dpad.gd" id="2_dpad"]
+
+[node name="Ui" type="CanvasLayer" unique_id=1858969540]
+script = ExtResource("1_nt7q6")
+
+[node name="DistanceLabel" type="Label" parent="." unique_id=13092669]
+visible = true
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 36.0
+text = "Mesafe: 0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.88, 0.92, 1.0, 1.0)
+
+[node name="HpLabel" type="Label" parent="." unique_id=236744962]
+offset_left = 10.0
+offset_top = 44.0
+offset_right = 160.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1.0, 0.30, 0.30, 1.0)
+
+[node name="StreakLabel" type="Label" parent="." unique_id=300010]
+visible = false
+modulate = Color(0, 0, 0, 0)
+offset_left = 10.0
+offset_top = 78.0
+offset_right = 180.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1.0, 0.80, 0.15, 1.0)
+
+[node name="PauseButton" type="Button" parent="." unique_id=300020]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 58.0
+grow_horizontal = 0
+text = "⏸"
+theme_override_font_sizes/font_size = 28
+
+[node name="PausePanel" type="ColorRect" parent="." unique_id=300021]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78)
+
+[node name="PauseTitle" type="Label" parent="PausePanel" unique_id=300022]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = -60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "DURAKLATILDI"
+
+[node name="ResumeButton" type="Button" parent="PausePanel" unique_id=300023]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -40.0
+offset_right = 85.0
+offset_bottom = 5.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+text = "Devam Et"
+
+[node name="MainMenuButton" type="Button" parent="PausePanel" unique_id=300024]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = 18.0
+offset_right = 85.0
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Ana Menü"
+
+[node name="VirtualDpad" type="Control" parent="." unique_id=300001]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -270.0
+offset_right = 130.0
+offset_bottom = -10.0
+grow_vertical = 0
+script = ExtResource("2_dpad")
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="PausePanel/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PausePanel/MainMenuButton" to="." method="_on_main_menu_pressed"]

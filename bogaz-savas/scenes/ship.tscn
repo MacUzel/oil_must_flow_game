@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b0v5dkhssvlhr"]
+
+[ext_resource type="Script" uid="uid://bceenv2350bt5" path="res://scripts/ship.gd" id="1_q631a"]
+
+[sub_resource type="Gradient" id="Gradient_trail"]
+colors = PackedColorArray(0.78, 0.92, 1, 0.65, 0.78, 0.92, 1, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q631a"]
+radius = 14.0
+height = 130.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1034839923 groups=["player"]]
+position = Vector2(280, 800)
+collision_mask = 2
+script = ExtResource("1_q631a")
+
+[node name="Trail" type="Line2D" parent="." unique_id=100000006]
+width = 5.0
+gradient = SubResource("Gradient_trail")
+begin_cap_mode = 2
+antialiased = true
+
+[node name="Sprite2D" type="Polygon2D" parent="." unique_id=2003782798]
+scale = Vector2(40, 155)
+color = Color(0.15, 0.2, 0.28, 1)
+polygon = PackedVector2Array(0, -0.52, 0.35, -0.2, 0.4, 0.1, 0.32, 0.43, 0.18, 0.52, -0.18, 0.52, -0.32, 0.43, -0.4, 0.1, -0.35, -0.2)
+
+[node name="CargoHold" type="Polygon2D" parent="." unique_id=100000003]
+color = Color(0.42, 0.15, 0.1, 1)
+polygon = PackedVector2Array(-12, -55, 12, -55, 12, -5, -12, -5)
+
+[node name="WaterlineStripe" type="Polygon2D" parent="." unique_id=100000002]
+color = Color(0.88, 0.72, 0.08, 1)
+polygon = PackedVector2Array(-15, 3, 15, 3, 15, 9, -15, 9)
+
+[node name="Bridge" type="Polygon2D" parent="." unique_id=100000004]
+color = Color(0.82, 0.78, 0.68, 1)
+polygon = PackedVector2Array(-8, 18, 8, 18, 8, 48, -8, 48)
+
+[node name="BridgeWindow" type="Polygon2D" parent="." unique_id=100000005]
+color = Color(0.25, 0.55, 0.88, 0.9)
+polygon = PackedVector2Array(-5, 22, 5, 22, 5, 33, -5, 33)
+
+[node name="ShipSprite" type="Sprite2D" parent="." unique_id=999000001]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=881602178]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=132059224]
+shape = SubResource("CapsuleShape2D_q631a")
+one_way_collision = true

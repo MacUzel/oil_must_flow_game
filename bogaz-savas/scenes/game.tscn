@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://b5krvmv87c3ry"]
+
+[ext_resource type="PackedScene" uid="uid://b0v5dkhssvlhr" path="res://scenes/ship.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://basedu0d2115a" path="res://scripts/game_manager.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cc8s3thsak2qf" path="res://scenes/mine.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://2kmpsihvm7qa" path="res://scenes/game_over.tscn" id="2_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cwdtgtm6tvogx" path="res://scenes/drone.tscn" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://vpvh0rlp5arh" path="res://scenes/missiles.tscn" id="4_u5sy4"]
+[ext_resource type="PackedScene" path="res://scenes/powerup.tscn" id="6_gee14"]
+[ext_resource type="PackedScene" uid="uid://bw1w25pnya56m" path="res://scenes/ui.tscn" id="6_p57ef"]
+
+[node name="Game_tscn" type="Node2D" unique_id=1506857123]
+script = ExtResource("1_yqjtg")
+game_over_scene = ExtResource("2_u5sy4")
+mine_scene = ExtResource("2_iywne")
+drone_scene = ExtResource("3_p57ef")
+missile_scene = ExtResource("4_u5sy4")
+powerup_scene = ExtResource("6_gee14")
+
+[node name="FullBG" type="ColorRect" parent="." unique_id=999998]
+offset_left = 0.0
+offset_top = -2000.0
+offset_right = 540.0
+offset_bottom = 3000.0
+color = Color(0.18, 0.55, 0.85, 1)
+
+[node name="BG1" type="ColorRect" parent="." unique_id=1352885687]
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0.039215688, 0.08627451, 0.15686275, 1)
+
+[node name="BG2" type="ColorRect" parent="." unique_id=439719546]
+offset_top = -960.0
+offset_right = 540.0
+color = Color(0.039215688, 0.08627451, 0.15686275, 1)
+
+[node name="DeepWater" type="Polygon2D" parent="." unique_id=100000001]
+color = Color(0.022, 0.052, 0.118, 0.45)
+polygon = PackedVector2Array(185, 0, 355, 0, 355, 960, 185, 960)
+
+[node name="CharacterBody2D2" parent="." unique_id=1034839923 instance=ExtResource("1_uwrxv")]
+
+[node name="Ui" parent="." unique_id=1858969540 instance=ExtResource("6_p57ef")]
+
+[node name="LeftWall" type="Polygon2D" parent="." unique_id=1285442737]
+color = Color(0.12, 0.10, 0.07, 1)
+polygon = PackedVector2Array(0, -200, 60, -200, 60, 0, 63, 96, 68, 192, 72, 288, 70, 384, 65, 480, 60, 576, 56, 672, 58, 768, 62, 864, 60, 960, 60, 1160, 0, 1160)
+
+[node name="LeftShore" type="Polygon2D" parent="LeftWall" unique_id=1285442740]
+color = Color(0.24, 0.20, 0.13, 1)
+polygon = PackedVector2Array(60, -200, 60, 0, 63, 96, 68, 192, 72, 288, 70, 384, 65, 480, 60, 576, 56, 672, 58, 768, 62, 864, 60, 960, 60, 1160, 44, 1160, 44, 960, 46, 864, 42, 768, 40, 672, 44, 576, 49, 480, 54, 384, 56, 288, 52, 192, 47, 96, 44, 0, 44, -200)
+
+[node name="LeftEdge" type="Polygon2D" parent="LeftWall" unique_id=1285442741]
+color = Color(0.04, 0.05, 0.12, 0.72)
+polygon = PackedVector2Array(60, -200, 60, 0, 63, 96, 68, 192, 72, 288, 70, 384, 65, 480, 60, 576, 56, 672, 58, 768, 62, 864, 60, 960, 60, 1160, 55, 1160, 55, 960, 57, 864, 53, 768, 51, 672, 55, 576, 60, 480, 65, 384, 67, 288, 63, 192, 58, 96, 55, 0, 55, -200)
+
+[node name="LeftFoam" type="Line2D" parent="LeftWall" unique_id=1285442742]
+width = 3.5
+default_color = Color(1.0, 1.0, 1.0, 0.22)
+points = PackedVector2Array(60, -200, 60, 0, 63, 96, 68, 192, 72, 288, 70, 384, 65, 480, 60, 576, 56, 672, 58, 768, 62, 864, 60, 960, 60, 1160)
+joint_mode = 1
+begin_cap_mode = 1
+end_cap_mode = 1
+
+[node name="RightWall" type="Polygon2D" parent="." unique_id=854725856]
+color = Color(0.12, 0.10, 0.07, 1)
+polygon = PackedVector2Array(540, -200, 480, -200, 480, 0, 477, 96, 472, 192, 468, 288, 470, 384, 475, 480, 480, 576, 484, 672, 482, 768, 478, 864, 480, 960, 480, 1160, 540, 1160)
+
+[node name="RightShore" type="Polygon2D" parent="RightWall" unique_id=854725858]
+color = Color(0.24, 0.20, 0.13, 1)
+polygon = PackedVector2Array(480, -200, 480, 0, 477, 96, 472, 192, 468, 288, 470, 384, 475, 480, 480, 576, 484, 672, 482, 768, 478, 864, 480, 960, 480, 1160, 496, 1160, 496, 960, 494, 864, 498, 768, 500, 672, 496, 576, 491, 480, 486, 384, 484, 288, 488, 192, 493, 96, 496, 0, 496, -200)
+
+[node name="RightEdge" type="Polygon2D" parent="RightWall" unique_id=854725859]
+color = Color(0.04, 0.05, 0.12, 0.72)
+polygon = PackedVector2Array(480, -200, 480, 0, 477, 96, 472, 192, 468, 288, 470, 384, 475, 480, 480, 576, 484, 672, 482, 768, 478, 864, 480, 960, 480, 1160, 485, 1160, 485, 960, 483, 864, 487, 768, 489, 672, 485, 576, 480, 480, 475, 384, 473, 288, 477, 192, 482, 96, 485, 0, 485, -200)
+
+[node name="RightFoam" type="Line2D" parent="RightWall" unique_id=854725860]
+width = 3.5
+default_color = Color(1.0, 1.0, 1.0, 0.22)
+points = PackedVector2Array(480, -200, 480, 0, 477, 96, 472, 192, 468, 288, 470, 384, 475, 480, 480, 576, 484, 672, 482, 768, 478, 864, 480, 960, 480, 1160)
+joint_mode = 1
+begin_cap_mode = 1
+end_cap_mode = 1
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1066090652]
+volume_db = -10.0
+autoplay = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1066090651]
+position = Vector2(270, 480)
